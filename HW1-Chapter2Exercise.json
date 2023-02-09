@@ -1,0 +1,947 @@
+{
+    "metadata": {
+        "kernelspec": {
+            "name": "SQL",
+            "display_name": "SQL",
+            "language": "sql"
+        },
+        "language_info": {
+            "name": "sql",
+            "version": ""
+        }
+    },
+    "nbformat_minor": 2,
+    "nbformat": 4,
+    "cells": [
+        {
+            "cell_type": "markdown",
+            "source": [
+                "\\--Proposition\n",
+                "\n",
+                "\\-- <span style=\"color: rgb(64, 128, 128); font-style: italic; background-color: rgba(220, 220, 220, 0.4); white-space: pre-wrap;\">Return orders placed in June 2015</span>"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "66928d70-8ba6-43e5-8b10-2f100b600cf2"
+            },
+            "attachments": {}
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "USE TSQLV4;\r\n",
+                "SELECT orderid, orderdate, custid, empid\r\n",
+                "FROM Sales.Orders\r\n",
+                "WHERE YEAR(orderdate) = 2015 AND MONTH(orderdate) = 6;"
+            ],
+            "metadata": {
+                "azdata_cell_guid": "8a027e5b-c00a-4565-9554-c188f0725924",
+                "language": "sql"
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(30 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.004"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 3,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "orderid"
+                                    },
+                                    {
+                                        "name": "orderdate"
+                                    },
+                                    {
+                                        "name": "custid"
+                                    },
+                                    {
+                                        "name": "empid"
+                                    }
+                                ]
+                            },
+                            "data": [
+                                {
+                                    "0": "10555",
+                                    "1": "2015-06-02",
+                                    "2": "71",
+                                    "3": "6"
+                                },
+                                {
+                                    "0": "10556",
+                                    "1": "2015-06-03",
+                                    "2": "73",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10557",
+                                    "1": "2015-06-03",
+                                    "2": "44",
+                                    "3": "9"
+                                },
+                                {
+                                    "0": "10558",
+                                    "1": "2015-06-04",
+                                    "2": "4",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10559",
+                                    "1": "2015-06-05",
+                                    "2": "7",
+                                    "3": "6"
+                                },
+                                {
+                                    "0": "10560",
+                                    "1": "2015-06-06",
+                                    "2": "25",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10561",
+                                    "1": "2015-06-06",
+                                    "2": "24",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10562",
+                                    "1": "2015-06-09",
+                                    "2": "66",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10563",
+                                    "1": "2015-06-10",
+                                    "2": "67",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10564",
+                                    "1": "2015-06-10",
+                                    "2": "65",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10565",
+                                    "1": "2015-06-11",
+                                    "2": "51",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10566",
+                                    "1": "2015-06-12",
+                                    "2": "7",
+                                    "3": "9"
+                                },
+                                {
+                                    "0": "10567",
+                                    "1": "2015-06-12",
+                                    "2": "37",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10568",
+                                    "1": "2015-06-13",
+                                    "2": "29",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10569",
+                                    "1": "2015-06-16",
+                                    "2": "65",
+                                    "3": "5"
+                                },
+                                {
+                                    "0": "10570",
+                                    "1": "2015-06-17",
+                                    "2": "51",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10571",
+                                    "1": "2015-06-17",
+                                    "2": "20",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10572",
+                                    "1": "2015-06-18",
+                                    "2": "5",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10573",
+                                    "1": "2015-06-19",
+                                    "2": "3",
+                                    "3": "7"
+                                },
+                                {
+                                    "0": "10574",
+                                    "1": "2015-06-19",
+                                    "2": "82",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10575",
+                                    "1": "2015-06-20",
+                                    "2": "52",
+                                    "3": "5"
+                                },
+                                {
+                                    "0": "10576",
+                                    "1": "2015-06-23",
+                                    "2": "80",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10577",
+                                    "1": "2015-06-23",
+                                    "2": "82",
+                                    "3": "9"
+                                },
+                                {
+                                    "0": "10578",
+                                    "1": "2015-06-24",
+                                    "2": "11",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10579",
+                                    "1": "2015-06-25",
+                                    "2": "45",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10580",
+                                    "1": "2015-06-26",
+                                    "2": "56",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10581",
+                                    "1": "2015-06-26",
+                                    "2": "21",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10582",
+                                    "1": "2015-06-27",
+                                    "2": "6",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10583",
+                                    "1": "2015-06-30",
+                                    "2": "87",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10584",
+                                    "1": "2015-06-30",
+                                    "2": "7",
+                                    "3": "4"
+                                }
+                            ]
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>orderid</th><th>orderdate</th><th>custid</th><th>empid</th></tr>",
+                            "<tr><td>10555</td><td>2015-06-02</td><td>71</td><td>6</td></tr>",
+                            "<tr><td>10556</td><td>2015-06-03</td><td>73</td><td>2</td></tr>",
+                            "<tr><td>10557</td><td>2015-06-03</td><td>44</td><td>9</td></tr>",
+                            "<tr><td>10558</td><td>2015-06-04</td><td>4</td><td>1</td></tr>",
+                            "<tr><td>10559</td><td>2015-06-05</td><td>7</td><td>6</td></tr>",
+                            "<tr><td>10560</td><td>2015-06-06</td><td>25</td><td>8</td></tr>",
+                            "<tr><td>10561</td><td>2015-06-06</td><td>24</td><td>2</td></tr>",
+                            "<tr><td>10562</td><td>2015-06-09</td><td>66</td><td>1</td></tr>",
+                            "<tr><td>10563</td><td>2015-06-10</td><td>67</td><td>2</td></tr>",
+                            "<tr><td>10564</td><td>2015-06-10</td><td>65</td><td>4</td></tr>",
+                            "<tr><td>10565</td><td>2015-06-11</td><td>51</td><td>8</td></tr>",
+                            "<tr><td>10566</td><td>2015-06-12</td><td>7</td><td>9</td></tr>",
+                            "<tr><td>10567</td><td>2015-06-12</td><td>37</td><td>1</td></tr>",
+                            "<tr><td>10568</td><td>2015-06-13</td><td>29</td><td>3</td></tr>",
+                            "<tr><td>10569</td><td>2015-06-16</td><td>65</td><td>5</td></tr>",
+                            "<tr><td>10570</td><td>2015-06-17</td><td>51</td><td>3</td></tr>",
+                            "<tr><td>10571</td><td>2015-06-17</td><td>20</td><td>8</td></tr>",
+                            "<tr><td>10572</td><td>2015-06-18</td><td>5</td><td>3</td></tr>",
+                            "<tr><td>10573</td><td>2015-06-19</td><td>3</td><td>7</td></tr>",
+                            "<tr><td>10574</td><td>2015-06-19</td><td>82</td><td>4</td></tr>",
+                            "<tr><td>10575</td><td>2015-06-20</td><td>52</td><td>5</td></tr>",
+                            "<tr><td>10576</td><td>2015-06-23</td><td>80</td><td>3</td></tr>",
+                            "<tr><td>10577</td><td>2015-06-23</td><td>82</td><td>9</td></tr>",
+                            "<tr><td>10578</td><td>2015-06-24</td><td>11</td><td>4</td></tr>",
+                            "<tr><td>10579</td><td>2015-06-25</td><td>45</td><td>1</td></tr>",
+                            "<tr><td>10580</td><td>2015-06-26</td><td>56</td><td>4</td></tr>",
+                            "<tr><td>10581</td><td>2015-06-26</td><td>21</td><td>3</td></tr>",
+                            "<tr><td>10582</td><td>2015-06-27</td><td>6</td><td>3</td></tr>",
+                            "<tr><td>10583</td><td>2015-06-30</td><td>87</td><td>2</td></tr>",
+                            "<tr><td>10584</td><td>2015-06-30</td><td>7</td><td>4</td></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 3
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "```\n",
+                "-- 2 \n",
+                "-- Return orders placed on the last day of the month\n",
+                "-- Tables involved: Sales.Orders table\n",
+                "```"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "7cd07686-51c4-449e-9c40-a8d40f67272b"
+            },
+            "attachments": {}
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "USE TSQLV4;\r\n",
+                "SELECT orderid, orderdate, custid, empid\r\n",
+                "FROM Sales.Orders\r\n",
+                "WHERE EOMONTH(orderdate) = orderdate; "
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "c4d5d267-da9c-48d2-928e-bb814b3bee06",
+                "tags": []
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(26 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.004"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 5,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "orderid"
+                                    },
+                                    {
+                                        "name": "orderdate"
+                                    },
+                                    {
+                                        "name": "custid"
+                                    },
+                                    {
+                                        "name": "empid"
+                                    }
+                                ]
+                            },
+                            "data": [
+                                {
+                                    "0": "10269",
+                                    "1": "2014-07-31",
+                                    "2": "89",
+                                    "3": "5"
+                                },
+                                {
+                                    "0": "10317",
+                                    "1": "2014-09-30",
+                                    "2": "48",
+                                    "3": "6"
+                                },
+                                {
+                                    "0": "10343",
+                                    "1": "2014-10-31",
+                                    "2": "44",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10399",
+                                    "1": "2014-12-31",
+                                    "2": "83",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10432",
+                                    "1": "2015-01-31",
+                                    "2": "75",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10460",
+                                    "1": "2015-02-28",
+                                    "2": "24",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10461",
+                                    "1": "2015-02-28",
+                                    "2": "46",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10490",
+                                    "1": "2015-03-31",
+                                    "2": "35",
+                                    "3": "7"
+                                },
+                                {
+                                    "0": "10491",
+                                    "1": "2015-03-31",
+                                    "2": "28",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10522",
+                                    "1": "2015-04-30",
+                                    "2": "44",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10583",
+                                    "1": "2015-06-30",
+                                    "2": "87",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10584",
+                                    "1": "2015-06-30",
+                                    "2": "7",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10616",
+                                    "1": "2015-07-31",
+                                    "2": "32",
+                                    "3": "1"
+                                },
+                                {
+                                    "0": "10617",
+                                    "1": "2015-07-31",
+                                    "2": "32",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10686",
+                                    "1": "2015-09-30",
+                                    "2": "59",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "10687",
+                                    "1": "2015-09-30",
+                                    "2": "37",
+                                    "3": "9"
+                                },
+                                {
+                                    "0": "10725",
+                                    "1": "2015-10-31",
+                                    "2": "21",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10806",
+                                    "1": "2015-12-31",
+                                    "2": "84",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10807",
+                                    "1": "2015-12-31",
+                                    "2": "27",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "10987",
+                                    "1": "2016-03-31",
+                                    "2": "19",
+                                    "3": "8"
+                                },
+                                {
+                                    "0": "10988",
+                                    "1": "2016-03-31",
+                                    "2": "65",
+                                    "3": "3"
+                                },
+                                {
+                                    "0": "10989",
+                                    "1": "2016-03-31",
+                                    "2": "61",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "11060",
+                                    "1": "2016-04-30",
+                                    "2": "27",
+                                    "3": "2"
+                                },
+                                {
+                                    "0": "11061",
+                                    "1": "2016-04-30",
+                                    "2": "32",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "11062",
+                                    "1": "2016-04-30",
+                                    "2": "66",
+                                    "3": "4"
+                                },
+                                {
+                                    "0": "11063",
+                                    "1": "2016-04-30",
+                                    "2": "37",
+                                    "3": "3"
+                                }
+                            ]
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>orderid</th><th>orderdate</th><th>custid</th><th>empid</th></tr>",
+                            "<tr><td>10269</td><td>2014-07-31</td><td>89</td><td>5</td></tr>",
+                            "<tr><td>10317</td><td>2014-09-30</td><td>48</td><td>6</td></tr>",
+                            "<tr><td>10343</td><td>2014-10-31</td><td>44</td><td>4</td></tr>",
+                            "<tr><td>10399</td><td>2014-12-31</td><td>83</td><td>8</td></tr>",
+                            "<tr><td>10432</td><td>2015-01-31</td><td>75</td><td>3</td></tr>",
+                            "<tr><td>10460</td><td>2015-02-28</td><td>24</td><td>8</td></tr>",
+                            "<tr><td>10461</td><td>2015-02-28</td><td>46</td><td>1</td></tr>",
+                            "<tr><td>10490</td><td>2015-03-31</td><td>35</td><td>7</td></tr>",
+                            "<tr><td>10491</td><td>2015-03-31</td><td>28</td><td>8</td></tr>",
+                            "<tr><td>10522</td><td>2015-04-30</td><td>44</td><td>4</td></tr>",
+                            "<tr><td>10583</td><td>2015-06-30</td><td>87</td><td>2</td></tr>",
+                            "<tr><td>10584</td><td>2015-06-30</td><td>7</td><td>4</td></tr>",
+                            "<tr><td>10616</td><td>2015-07-31</td><td>32</td><td>1</td></tr>",
+                            "<tr><td>10617</td><td>2015-07-31</td><td>32</td><td>4</td></tr>",
+                            "<tr><td>10686</td><td>2015-09-30</td><td>59</td><td>2</td></tr>",
+                            "<tr><td>10687</td><td>2015-09-30</td><td>37</td><td>9</td></tr>",
+                            "<tr><td>10725</td><td>2015-10-31</td><td>21</td><td>4</td></tr>",
+                            "<tr><td>10806</td><td>2015-12-31</td><td>84</td><td>3</td></tr>",
+                            "<tr><td>10807</td><td>2015-12-31</td><td>27</td><td>4</td></tr>",
+                            "<tr><td>10987</td><td>2016-03-31</td><td>19</td><td>8</td></tr>",
+                            "<tr><td>10988</td><td>2016-03-31</td><td>65</td><td>3</td></tr>",
+                            "<tr><td>10989</td><td>2016-03-31</td><td>61</td><td>2</td></tr>",
+                            "<tr><td>11060</td><td>2016-04-30</td><td>27</td><td>2</td></tr>",
+                            "<tr><td>11061</td><td>2016-04-30</td><td>32</td><td>4</td></tr>",
+                            "<tr><td>11062</td><td>2016-04-30</td><td>66</td><td>4</td></tr>",
+                            "<tr><td>11063</td><td>2016-04-30</td><td>37</td><td>3</td></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 5
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "```\n",
+                "-- 3 \n",
+                "-- Return employees with last name containing the letter 'e' twice or more\n",
+                "-- Tables involved: HR.Employees table\n",
+                "```"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "47ec1fb2-f79d-450d-81ee-37cc8a954d6e"
+            },
+            "attachments": {}
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "USE TSQLV4;\r\n",
+                "SELECT empid, firstname, lastname\r\n",
+                "FROM HR.Employees\r\n",
+                "WHERE lastname LIKE '%e%e%';"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "c32347d8-f7b7-4ff1-a8c3-49d77381e8f4",
+                "tags": []
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(2 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.005"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 21,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "empid"
+                                    },
+                                    {
+                                        "name": "firstname"
+                                    },
+                                    {
+                                        "name": "lastname"
+                                    }
+                                ]
+                            },
+                            "data": [
+                                {
+                                    "0": "4",
+                                    "1": "Yael",
+                                    "2": "Peled"
+                                },
+                                {
+                                    "0": "5",
+                                    "1": "Sven",
+                                    "2": "Mortensen"
+                                }
+                            ]
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>empid</th><th>firstname</th><th>lastname</th></tr>",
+                            "<tr><td>4</td><td>Yael</td><td>Peled</td></tr>",
+                            "<tr><td>5</td><td>Sven</td><td>Mortensen</td></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 21
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "```\n",
+                "-- 4 \n",
+                "-- Return orders with total value(qty*unitprice) greater than 10000\n",
+                "-- sorted by total value\n",
+                "-- Tables involved: Sales.OrderDetails table\n",
+                "```"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "7b7a0923-9825-421c-879f-98be7f1be45e"
+            },
+            "attachments": {}
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "USE TSQLV4;\r\n",
+                "SELECT orderid, SUM(qty*unitprice) AS totalvalue\r\n",
+                "FROM Sales.OrderDetails\r\n",
+                "GROUP BY orderid\r\n",
+                "HAVING SUM(qty*unitprice) > 10000\r\n",
+                "ORDER BY totalvalue DESC;\r\n",
+                "\r\n",
+                ""
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "6dc4e060-6084-4651-a951-3f4649c8ff17",
+                "tags": []
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(14 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.004"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 20,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "orderid"
+                                    },
+                                    {
+                                        "name": "totalvalue"
+                                    }
+                                ]
+                            },
+                            "data": [
+                                {
+                                    "0": "10865",
+                                    "1": "17250.00"
+                                },
+                                {
+                                    "0": "11030",
+                                    "1": "16321.90"
+                                },
+                                {
+                                    "0": "10981",
+                                    "1": "15810.00"
+                                },
+                                {
+                                    "0": "10372",
+                                    "1": "12281.20"
+                                },
+                                {
+                                    "0": "10424",
+                                    "1": "11493.20"
+                                },
+                                {
+                                    "0": "10817",
+                                    "1": "11490.70"
+                                },
+                                {
+                                    "0": "10889",
+                                    "1": "11380.00"
+                                },
+                                {
+                                    "0": "10417",
+                                    "1": "11283.20"
+                                },
+                                {
+                                    "0": "10897",
+                                    "1": "10835.24"
+                                },
+                                {
+                                    "0": "10353",
+                                    "1": "10741.60"
+                                },
+                                {
+                                    "0": "10515",
+                                    "1": "10588.50"
+                                },
+                                {
+                                    "0": "10479",
+                                    "1": "10495.60"
+                                },
+                                {
+                                    "0": "10540",
+                                    "1": "10191.70"
+                                },
+                                {
+                                    "0": "10691",
+                                    "1": "10164.80"
+                                }
+                            ]
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>orderid</th><th>totalvalue</th></tr>",
+                            "<tr><td>10865</td><td>17250.00</td></tr>",
+                            "<tr><td>11030</td><td>16321.90</td></tr>",
+                            "<tr><td>10981</td><td>15810.00</td></tr>",
+                            "<tr><td>10372</td><td>12281.20</td></tr>",
+                            "<tr><td>10424</td><td>11493.20</td></tr>",
+                            "<tr><td>10817</td><td>11490.70</td></tr>",
+                            "<tr><td>10889</td><td>11380.00</td></tr>",
+                            "<tr><td>10417</td><td>11283.20</td></tr>",
+                            "<tr><td>10897</td><td>10835.24</td></tr>",
+                            "<tr><td>10353</td><td>10741.60</td></tr>",
+                            "<tr><td>10515</td><td>10588.50</td></tr>",
+                            "<tr><td>10479</td><td>10495.60</td></tr>",
+                            "<tr><td>10540</td><td>10191.70</td></tr>",
+                            "<tr><td>10691</td><td>10164.80</td></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 20
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "```\n",
+                "-- 5\n",
+                "-- Write a query against the HR.Employees table that returns employees\n",
+                "-- with a last name that starts with a lower case letter.\n",
+                "-- Remember that the collation of the sample database\n",
+                "-- is case insensitive (Latin1_General_CI_AS).\n",
+                "-- For simplicity, you can assume that only English letters are used\n",
+                "-- in the employee last names.\n",
+                "-- Tables involved: Sales.OrderDetails table\n",
+                "```"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "fff75b20-7bd7-4d64-8738-8da76a5fca84"
+            },
+            "attachments": {}
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "SELECT empid, lastname\r\n",
+                "FROM HR.Employees\r\n",
+                "WHERE lastname COLLATE Latin1_General_BIN LIKE '[a-z]%';"
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "ea28fb76-54a4-4fdc-99d7-a2474f5ee4b2",
+                "tags": []
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(0 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.002"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 25,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "empid"
+                                    },
+                                    {
+                                        "name": "lastname"
+                                    }
+                                ]
+                            },
+                            "data": []
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>empid</th><th>lastname</th></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 25
+        },
+        {
+            "cell_type": "code",
+            "source": [
+                "USE TSQLV4;\r\n",
+                "SELECT TOP (3) shipcountry, AVG(freight) as avgfreight\r\n",
+                "FROM Sales.Orders\r\n",
+                "WHERE YEAR(orderdate) = 2015\r\n",
+                "GROUP BY shipcountry\r\n",
+                "ORDER BY avgfreight desc;\r\n",
+                "\r\n",
+                ""
+            ],
+            "metadata": {
+                "language": "sql",
+                "azdata_cell_guid": "0cbfb4f6-b426-487e-b6df-3cf7f5b557b6",
+                "tags": []
+            },
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "(3 rows affected)"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/html": "Total execution time: 00:00:00.005"
+                    },
+                    "metadata": {}
+                },
+                {
+                    "output_type": "execute_result",
+                    "metadata": {},
+                    "execution_count": 28,
+                    "data": {
+                        "application/vnd.dataresource+json": {
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "name": "shipcountry"
+                                    },
+                                    {
+                                        "name": "avgfreight"
+                                    }
+                                ]
+                            },
+                            "data": [
+                                {
+                                    "0": "Austria",
+                                    "1": "178.3642"
+                                },
+                                {
+                                    "0": "Switzerland",
+                                    "1": "117.1775"
+                                },
+                                {
+                                    "0": "Sweden",
+                                    "1": "105.16"
+                                }
+                            ]
+                        },
+                        "text/html": [
+                            "<table>",
+                            "<tr><th>shipcountry</th><th>avgfreight</th></tr>",
+                            "<tr><td>Austria</td><td>178.3642</td></tr>",
+                            "<tr><td>Switzerland</td><td>117.1775</td></tr>",
+                            "<tr><td>Sweden</td><td>105.16</td></tr>",
+                            "</table>"
+                        ]
+                    }
+                }
+            ],
+            "execution_count": 28
+        }
+    ]
+}
