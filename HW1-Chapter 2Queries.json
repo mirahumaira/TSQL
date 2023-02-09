@@ -12474,7 +12474,8 @@
             ],
             "metadata": {
                 "language": "sql",
-                "azdata_cell_guid": "a39f762f-1be5-4055-b6e7-f01229c15694"
+                "azdata_cell_guid": "a39f762f-1be5-4055-b6e7-f01229c15694",
+                "tags": []
             },
             "outputs": [
                 {
